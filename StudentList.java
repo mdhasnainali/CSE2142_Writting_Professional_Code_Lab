@@ -70,21 +70,8 @@ public class StudentList {
 				System.out.println(Constants.MESSAGE_FOR_LOADING_DATA);			
 				try {
 					String studentsNameInSingleString = readFromFile(Constants.FILE_NAME);
-					char charactersInStudentsNames[] = studentsNameInSingleString.toCharArray();			
-					boolean isWord = false;
-					int count=0;
-					for(char character:charactersInStudentsNames) {
-						if(character ==' ') {
-							if (!isWord) {	
-								count++; 
-								isWord =true;	
-							}
-							else { 
-								isWord=false;
-							}			
-						}
-					}
-					System.out.println(count + Constants.WORDS_FOUND );
+					String studentsNames[] = studentsNameInSingleString.split(Constants.COMMA);		
+					System.out.println(studentsNames.length + Constants.WORDS_FOUND );
 				} catch (Exception e){
 
 				} 

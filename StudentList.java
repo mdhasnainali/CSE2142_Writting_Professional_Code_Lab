@@ -39,7 +39,7 @@ public class StudentList {
 					new FileWriter("students.txt", true));
 			String t = args[0].substring(1);
 	        Date d = new Date();
-	        String df = "dd/mm/yyyy-hh:mm:ss a";
+	        String df = "dd/MM/yyyy-hh:mm:ss a";
 	        DateFormat dateFormat = new SimpleDateFormat(df);
 	        String fd= dateFormat.format(d);
 			s.write(", "+t+"\nList last updated on "+fd);

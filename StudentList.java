@@ -41,10 +41,8 @@ public class StudentList {
 				System.out.println(Constants.MESSAGE_FOR_LOADING_DATA);			
 				try {
 				String newStudentName = args[0].substring(1);
-				Date date = new Date();
-				String dateFormatInString = Constants.DATE_FORMAT_STRING;
-				DateFormat dateFormat = new SimpleDateFormat(dateFormatInString);
-				String formattedDate= dateFormat.format(date);
+				DateFormat dateFormat = new SimpleDateFormat(Constants.DATE_FORMAT_STRING);
+				String formattedDate= dateFormat.format(new Date());
 				writeToFile(Constants.FILE_NAME, Constants.COMMA + newStudentName + Constants.LAST_UPDATE + formattedDate);
 				} catch (Exception e){
 
@@ -62,7 +60,6 @@ public class StudentList {
 						if(studentsNames[index].equals(studentName)) {
 							System.out.println(Constants.MESSAGE_FOR_FOUND_THE_STUDENT);
 							done = true;
-							done=true;
 						}
 					}
 				} catch (Exception e){

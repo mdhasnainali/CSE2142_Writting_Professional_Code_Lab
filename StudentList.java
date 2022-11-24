@@ -77,6 +77,10 @@ public class StudentList {
 				} 
 				System.out.println(Constants.MESSAGE_FOR_DATA_LOADED);				
 			}
+			else {
+				System.out.println(Constants.ERROR_MESSAGE_FOR_INVALID_ARGUMENTS);
+				System.exit(1);
+			}
 		}
 	}
 

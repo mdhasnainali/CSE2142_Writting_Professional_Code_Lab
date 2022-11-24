@@ -5,12 +5,16 @@ import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
 
+		// Check the no of arguments
 		if(args.length != 1) {
 			System.out.println(Constants.ERROR_MESSAGE_FOR_INVALID_NO_OF_ARGUMENTS);
 			System.exit(1);
 		}
+
+		// Check each arguments
 		else{
-			// Check arguments
+
+			// Printing all the students name
 			if(args[0].equals(Constants.CHAR_A)) {
 				System.out.println(Constants.MESSAGE_FOR_LOADING_DATA);			
 				try {
@@ -24,6 +28,8 @@ public class StudentList {
 				} 
 				System.out.println(Constants.MESSAGE_FOR_DATA_LOADED);
 			}
+
+			// Print randomly picked student name
 			else if(args[0].equals(Constants.CHAR_R)) {
 				System.out.println(Constants.MESSAGE_FOR_LOADING_DATA);		
 				try {
@@ -37,6 +43,8 @@ public class StudentList {
 				} 
 				System.out.println(Constants.MESSAGE_FOR_DATA_LOADED);			
 			}
+
+			// Adding a student name to the file
 			else if(args[0].contains(Constants.PLUS_SIGN)) {
 				System.out.println(Constants.MESSAGE_FOR_LOADING_DATA);			
 				try {
@@ -49,6 +57,8 @@ public class StudentList {
 				}
 				System.out.println(Constants.MESSAGE_FOR_DATA_LOADED);	
 			}
+
+			// Check whether a student name is in the file or not
 			else if(args[0].contains(Constants.QUESTION_MARK)) {
 				System.out.println(Constants.MESSAGE_FOR_LOADING_DATA);			
 				try {
@@ -66,6 +76,8 @@ public class StudentList {
 				} 
 				System.out.println(Constants.MESSAGE_FOR_DATA_LOADED);				
 			}
+
+			// Count the number of the names of the students in the file
 			else if(args[0].contains(Constants.CHAR_C)) {
 				System.out.println(Constants.MESSAGE_FOR_LOADING_DATA);			
 				try {
@@ -84,6 +96,7 @@ public class StudentList {
 		}
 	}
 
+	// Read from the file
 	public static String readFromFile(String fileName){
 		try{
 			BufferedReader bufferedReader = new BufferedReader(
@@ -98,6 +111,7 @@ public class StudentList {
 		return Constants.BLANK_STRING;
 	}
 
+	// Write to the file
 	public static void writeToFile(String fileName, String content){
 		try{
 			BufferedWriter bufferedWriter = new BufferedWriter(
